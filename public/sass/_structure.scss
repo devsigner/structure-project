@@ -1,0 +1,181 @@
+/*
++------------------------BODY-------------------------+
+|                                                     |
+|  +-------------------#top--------------------+      |
+|  |                                           |      |
+|  |  +-------------.container--------------+  |      |
+|  |  |                                     |  |      |
+|  |  |    contenus du top                  |  |      |
+|  |  |                                     |  |      |
+|  |  +-------------------------------------+  |      |
+|  |                                           |      |
+|  +-------------------------------------------+      |
+|                                                     |
+|                                                     |
+|  +------------------#header------------------+      |
+|  |                                           |      |
+|  |  +-------------.container--------------+  |      |
+|  |  |                                     |  |      |
+|  |  |    contenus du header               |  |      |
+|  |  |                                     |  |      |
+|  |  +-------------------------------------+  |      |
+|  |                                           |      |
+|  +-------------------------------------------+      |
+|                                                     |
+|                                                     |
+|  +-------------------#page---------------------+    |
+|  |  +----------------#main-------------------+ |    |
+|  |  |                                        | |    |
+|  |  | +-------------.container-------------+ | |    |
+|  |  | |                                    | | |    |
+|  |  | | +--#main-content--+ +--#sidebar--+ | | |    |
+|  |  | | |                 | |            | | | |    |
+|  |  | | | contenus page   | |  contenus  | | | |    |
+|  |  | | |                 | |            | | | |    |
+|  |  | | +-----------------+ +------------+ | | |    |
+|  |  | |                                    | | |    |
+|  |  | +------------------------------------+ | |    |
+|  |  +----------------------------------------+ |    |
+|  +---------------------------------------------+    |
+|                                                     |
+|                                                     |
+|  +--------------------#footer--------------------+  |
+|  |                                               |  |
+|  |    +-------------.container--------------+    |  |
+|  |    |                                     |    |  |
+|  |    |    contenus footer                  |    |  |
+|  |    |                                     |    |  |
+|  |    +-------------------------------------+    |  |
+|  |                                               |  |
+|  +-----------------------------------------------+  |
+|                                                     |
++-----------------------------------------------------+
+*/
+
+#wrapper_big_pub {
+  &.activate {
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    #global_page {
+      cursor: default;
+      @include grid-container;
+      #header, #menu, #subheader, #page .header {
+        background-color: transparent !important;
+        background-image: none !important;
+      }
+    }
+
+    #header .coloration {
+      background-color: transparent;
+      background-image: none; }
+
+    #page .shaddow {
+      left: 50%;
+      margin-left: -492px;
+      width: $ninesixty-grid-width - 10px; }
+  }
+}
+
+#wrapper_header_pub {
+  display: block;
+  position: relative;
+  width: auto;
+  a{
+    display: block;
+    width: auto;
+    text-align: center;
+    font-size: 1px;
+    line-height: 1px;
+  }
+  img{
+    font-size: 1px;
+    line-height: 1px;
+  }
+}
+
+#top,
+#header,
+#footer,
+#sidebar,
+#main {}
+
+
+#top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9000;
+  .main {
+    height: $height_top;
+  }
+}
+.ie6 #top {
+  position: relative;
+}
+
+
+#top, #header, #footer {
+  clear: both;
+  .container {
+  }
+}
+
+#wrapper_big_pub {margin-top: $height_top;}
+.ie6 #wrapper_big_pub {margin-top: 0;}
+.main {
+  @include grid($ninesixty-columns);
+}
+
+#menu {
+  display: block;
+
+  .coloration, .navigation {
+    height: 32px;
+  }
+  .coloration {
+    float: left;
+    width: 50%;
+    margin-left: -492px;
+  }
+  .navigation {
+    margin: 0 auto;
+    width: $ninesixty-grid-width - 10px;
+    display:block;
+    float: left;
+  }
+}
+
+#rubriques {
+  @include inline-list;
+  li {
+    float: left;
+  }
+}
+
+#page {
+  position: relative;
+
+  .shaddow{
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 1px;
+  }
+}
+
+
+#sidebar {
+  @include omega();
+  @include grid(5);
+}
+#main-content  {
+  @include alpha();
+  @include grid(11);
+}
+
+

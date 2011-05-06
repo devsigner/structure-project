@@ -1,0 +1,101 @@
+#wrapper_big_pub {
+  background-color: #e697bd;
+  /*padding-top: 305px;*/
+
+  &.activate {
+    background-color: #000 !important;
+    background-image: url(/images/_test/full_size_window_pub_test.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+
+#top {
+  $color-top: #e1b076;
+  background-color: adjust-lightness($color-top, 10);
+  .main {
+    background-color:  $color-top;
+  }
+}
+
+#header {
+  $color-header: #b5a5cb;
+  background-color: adjust-lightness($color-header, 10);
+  .main {
+    background-color:  $color-header;
+  }
+}
+#menu{
+  $color-header: #e6e195;
+  background-color: adjust-lightness($color-header, 10);
+  .coloration {
+    background-color: adjust-lightness($color-header, -30);
+  }
+  .navigation {
+    background-color: adjust-lightness($color-header, -10);
+  }
+}
+
+#header, #footer {
+  .main {
+    height: 200px;
+  }
+}
+
+
+#header_page {
+  $color: #87c262;
+  background-color: adjust-lightness($color, 10);
+
+  .main {
+    height: 30px;
+    background-color: adjust-lightness($color, -10);
+  }
+}
+
+#subheader {
+  $color: #72a784;
+  background-color: adjust-lightness($color, 10);
+  .main{
+    background-color: adjust-lightness($color, -10);
+    height: 30px;
+  }
+}
+
+#page {
+  .shaddow {
+    $color: #547772;
+    background-color: $color;
+    height: 5px;
+  }
+  .header{
+    $color: #333;
+    background-color: adjust-lightness($color, -10);
+
+    .main {
+      height: 150px;
+      background-color: adjust-lightness($color, 10);
+    }
+  }
+}
+
+#sidebar, #main-content {
+    height: 400px;
+}
+#main-content {
+  background-color: #a5bbcb;
+}
+
+#sidebar{
+   background-color: #d3b4ab;
+}
+
+#footer {
+  $color-footer: #acacac;
+  background-color: adjust-lightness($color-footer, 10);
+  .main {
+    background-color:  $color-footer;
+    height: 160px;
+  }
+}
